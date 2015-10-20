@@ -184,9 +184,9 @@ public class SolrCsvDumper {
 				} while ((lineCount > Integer.parseInt(GET_MAX_SOLR_RAWLOG)));
 
 				//Retrieve all the files under source directory and add them to ZIP file
-				File books = new File(System.getProperty("user.dir"));
+				File srcFolder = new File(System.getProperty("user.dir"));
 				
-				File[] files = books.listFiles(new FilenameFilter() {
+				File[] files = srcFolder.listFiles(new FilenameFilter() {
 				    public boolean accept(File dir, String name) {
 //				        System.out.println(name + ":" + dir.length());
 				    	return (name.toLowerCase().startsWith(s)&&name.toLowerCase().endsWith(".csv"));
